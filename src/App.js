@@ -1,11 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       Football App
+      <h2>Select your team here</h2>
+      <select>
+        <option>team1</option>
+        <option>team2</option>
+      </select>
     </div>
   );
 }
