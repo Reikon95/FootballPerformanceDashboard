@@ -45,9 +45,10 @@ function App() {
         <option>team1</option>
         <option>team2</option>
       </select>
-      <button onClick={findDifferential}>Test API</button>
+      
+      <button onClick={()=>findDifferential('Liverpool FC', 'Chelsea FC')}>Test API</button>
       <h3>Teams</h3>
-      First place is {}
+      First place is 
     
       
     </div>
