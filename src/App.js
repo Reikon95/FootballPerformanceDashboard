@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Axios from 'axios';
-
+import Standings from './Standings.js'
 function App() {
   const [info, setInfo] = useState([]);
   useEffect(() => {
@@ -14,22 +14,38 @@ function App() {
   function storeData() {
     let results = [];
     for (let i = 0; i < 20; i++) {
-      console.log(info[i].team.name)
-      console.log(i + 1)
-      results.push(`${i + 1} ${info[i].team.name}`);
+      results.push(`${info[i].team.name}`);
     }
+    console.log(results)
     return results;
   }
+  function storeData() {
+    let results = [];
+    for (let i = 0; i < 20; i++) {
+      results.push(`${info[i].team.name}`);
+    }
+    console.log(results)
+    return results;
+  }
+
+  function findDifferential(team1, team2) {
+    storeData()
+    let difference = (storeData().indexOf(team1) - storeData().indexOf(team2));
+    console.log(difference)
+    return difference;
+  }
+
       
   return (
     <div className="App">
+      
       Football App
       <h2>Select your team here</h2>
       <select>
         <option>team1</option>
         <option>team2</option>
       </select>
-      <button onClick={storeData}>Test API</button>
+      <button onClick={findDifferential}>Test API</button>
       <h3>Teams</h3>
       First place is {}
     
