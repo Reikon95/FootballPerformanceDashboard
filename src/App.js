@@ -19,7 +19,7 @@ function App() {
         <option>team1</option>
         <option>team2</option>
       </select>
-      <button onClick={() => console.log(info[0].team.name)}>Test API</button>
+      <button onClick={() => console.log(info[10].team.name)}>Test API</button>
       <h3>Teams</h3>
       First place is {}
     
