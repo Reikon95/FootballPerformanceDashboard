@@ -1,36 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Axios from 'axios';
 
 function App() {
-  function handleClick() {
-  fetch("https://api-football-v1.p.rapidapi.com/v2/predictions/157462", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-		"x-rapidapi-key": "ae5e938ba4mshed60cad0dd964c7p118373jsnf418cc6bee48"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.log(err);
-});}
-function handleOtherClick() {
-  fetch("https://api-football-v1.p.rapidapi.com/v2/leagues", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-		"X-RapidAPI-Key": "ae5e938ba4mshed60cad0dd964c7p118373jsnf418cc6bee48"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.log(err);
-});
-}
+  const [info, setInfo] = useState([]);
+  useEffect(() => {
+    Axios.get('http://api.football-data.org/v2/competitions/2021/standings', {
+      headers: {'X-Auth-Token' : 'ffdf6b8895ad49d3af4db2724aea4c3b', 'Content-Type': 'application/json'},
+    })
+      .then(data => setInfo(data.data.standings[0].table))
+  }, [])
+      
   return (
     <div className="App">
       Football App
@@ -39,8 +19,10 @@ function handleOtherClick() {
         <option>team1</option>
         <option>team2</option>
       </select>
-      <button onClick={handleClick}>Test API</button>
-      <button onClick={handleOtherClick}>Test API</button>
+      <button onClick={() => console.log(info[0].team.name)}>Test API</button>
+      <h3>Teams</h3>
+      First place is {}
+    
       
     </div>
   );
