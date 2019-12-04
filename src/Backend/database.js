@@ -11,7 +11,7 @@ function StandingsDatabase() {
       .then(data => setInfo(data.data.standings[0].table))
   }, [])
   console.log(info);
-
+  let UsefulData = info.map()
 
       
   return (
@@ -25,5 +25,3 @@ function StandingsDatabase() {
     </>
   );
 }
-
-export default StandingsDatabase;
