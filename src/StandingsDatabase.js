@@ -17,7 +17,8 @@ function StandingsDatabase() {
   return (
     <>
     {info.map(team => (
-        <li>{team.position} {team.team.name} {team.playedGames} {team.won} {team.draw} {team.lost} {team.points} {team.goalsFor} {team.goalsAgainst} {team.goalDifference}</li>
+        <li>{team.position} {team.team.name} {team.playedGames} {team.won} {team.draw} {team.lost}  
+            {team.goalsFor} {team.goalsAgainst} {team.goalDifference} <strong>{team.points}</strong></li>
     ))}
     
     </>
