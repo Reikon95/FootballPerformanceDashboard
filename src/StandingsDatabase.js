@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Axios from 'axios';
+import './StandingsDBStyle.css';
 function StandingsDatabase() {
   const [info, setInfo] = useState([]);
   useEffect(() => {
@@ -15,10 +16,8 @@ function StandingsDatabase() {
       
   return (
     <>
-    Differentials  
-    hello world
     {info.map(team => (
-        <li>{team.position} {team.team.name} {team.points}</li>
+        <li>{team.position} {team.team.name} {team.playedGames} {team.won} {team.draw} {team.lost} {team.points} {team.goalsFor} {team.goalsAgainst} {team.goalDifference}</li>
     ))}
     
     </>
