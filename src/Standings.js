@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Axios from 'axios';
+import GetDifferential from './DataGenerators/GetDifferential.js'
 function Standings() {
   const [info, setInfo] = useState([]);
   useEffect(() => {
@@ -15,24 +16,16 @@ function Standings() {
     for (let i = 0; i < 20; i++) {
       results.push(`${info[i].team.name}`);
     }
-    console.log(results)
-    return results;
-  }
-  function storeData() {
-    let results = [];
-    for (let i = 0; i < 20; i++) {
-      results.push(`${info[i].team.name}`);
-    }
-    console.log(results)
     return results;
   }
 
-  function findDifferential(team1, team2) {
-    storeData()
-    let difference = (storeData().indexOf(team1) - storeData().indexOf(team2));
-    console.log(difference)
-    return difference;
-  }
+  // function findDifferential(team1, team2) {
+  //   storeData()
+  //   console.log(storeData())
+  //   let difference = (storeData().indexOf(team1) - storeData().indexOf(team2));
+  //   console.log(difference)
+  //   return difference;
+  // }
 
       
   return (
@@ -41,12 +34,17 @@ function Standings() {
       Football App
       <h2>Select your team here</h2>
       <select>
-        <option>team1</option>
-        <option>team2</option>
+        <option>Arsenal FC</option>
+        <option>Aston Villa FC</option>
+        <option>Chelsea FC</option>
+        <option>Liverpool FC</option>
+        <option>Manchester City FC</option>
+        <option>Wolverhampton Wanderers FC</option>
       </select>
-      <button onClick={()=>findDifferential('Liverpool FC', 'Chelsea FC')}>Test API</button>
+      {/* <button onClick={()=>GetDifferential('Liverpool FC', 'Chelsea FC')}>Test API</button> */}
       <h3>Next Fixture Differential</h3>
-      
+      {/* {() =>findDifferential('Arsenal FC', 'AFC Bournemouth')} */}
+      <GetDifferential team1="Arsenal FC" team2="Chelsea FC"/>
     </div>
   );
 }
