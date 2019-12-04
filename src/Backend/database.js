@@ -11,8 +11,7 @@ function StandingsDatabase() {
       .then(data => setInfo(data.data.standings[0].table))
   }, [])
   console.log(info);
-  let UsefulData = info.map()
-
+  console.log(info[0].position - info[4].position)
       
   return (
     <>
@@ -21,7 +20,8 @@ function StandingsDatabase() {
         <li>{team.position} {team.team.name} {team.playedGames} {team.won} {team.draw} {team.lost}  
             {team.goalsFor} {team.goalsAgainst} {team.goalDifference} <strong>{team.points}</strong></li>
     ))}
-    
+
+  
     </>
   );
 }
