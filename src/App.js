@@ -6,9 +6,7 @@ function App() {
   useEffect(() => {
     fetch('/rest/test')
     .then(response => response.json())
-    .then(teams => {
-      console.log('The current list of teams is ', teams)
-    })
+    .then(teams => setTeams(teams))
   }, []);
   return (
     <>
@@ -18,7 +16,12 @@ function App() {
     <h2>Goals Scored</h2>
     <h2>Goals Conceded</h2>
     <StandingsDatabase/> */}
-
+    <h3>Current false stanings</h3>
+    {
+      teams.map((team) => {
+      return <li>Team: {team.name}</li>
+      })
+    }
     </>
   )
 }
