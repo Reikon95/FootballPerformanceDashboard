@@ -6,6 +6,7 @@
     "ajax": "0.0.4",
     "axios": "^0.19.0",
     "express": "^4.17.1",
+    "nodemon": "^2.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0"
@@ -15,7 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start-backend": "node src/Backend/App.js"
+    "start-backend": "nodemon src/Backend/App.js"
   },
   "eslintConfig": {
     "extends": "react-app"
