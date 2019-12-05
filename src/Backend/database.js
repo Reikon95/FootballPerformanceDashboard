@@ -12,6 +12,10 @@ function StandingsDatabase() {
   }, [])
   console.log(info);
   console.log(info[0].position - info[4].position)
+  const OverallStandings = info.map(team => (
+    <li>{team.position} {team.team.name} {team.playedGames} {team.won} {team.draw} {team.lost}  
+        {team.goalsFor} {team.goalsAgainst} {team.goalDifference} <strong>{team.points}</strong></li>
+))
       
   return (
     <>
@@ -20,6 +24,7 @@ function StandingsDatabase() {
         <li>{team.position} {team.team.name} {team.playedGames} {team.won} {team.draw} {team.lost}  
             {team.goalsFor} {team.goalsAgainst} {team.goalDifference} <strong>{team.points}</strong></li>
     ))}
+    {OverallStandings}
 
   
     </>
