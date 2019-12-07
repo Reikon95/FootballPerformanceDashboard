@@ -12,7 +12,7 @@ function StandingsDatabase() {
   }, [])
   console.log(info);
 
-
+  // post stuff to the backend
       
   return (
     <>
