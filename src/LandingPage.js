@@ -31,6 +31,7 @@ function LandingPage() {
       ))}
     </select>
     {selectedTeam}
+    {selectedTeam ? <button>get your results</button> : ''}
     </form>
     </>
   );

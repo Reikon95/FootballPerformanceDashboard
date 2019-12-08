@@ -7,8 +7,6 @@ function App() {
     <>
     Current Selectors
     <LandingPage/>
-    Real standings
-    <StandingsDatabase/>
     
     </>
   )
