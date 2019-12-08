@@ -3,7 +3,7 @@ import './App.css';
 import Axios from 'axios';
 import './StandingsDBStyle.css';
 function StandingsDatabase() {
-  const teams = [];
+  const teamDatabase = [];
   const [info, setInfo] = useState([]);
   useEffect(() => {
     Axios.get('http://api.football-data.org/v2/competitions/2021/standings', {
@@ -13,10 +13,19 @@ function StandingsDatabase() {
   }, [])
   for (let teams of info) {
     console.log(teams.team.name);
+    teamDatabase.push(teams.team.name);
   }
+  teamDatabase.sort();
+  console.log(teamDatabase);
       
   return (
     <>
+    Select your team!
+    <select>
+      {teamDatabase.map(team => (
+        <option>{team}</option>
+      ))}
+    </select>
   
     {info.map(team => (
         <li>{team.position} {team.team.name} {team.playedGames} {team.won} {team.draw} {team.lost}  

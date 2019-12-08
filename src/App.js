@@ -10,18 +10,7 @@ function App() {
   }, []);
   return (
     <>
-    <h2>Next Fixture Differential</h2>
-    {/* <h2>Current Form</h2>
-    <h2>Top Players</h2>
-    <h2>Goals Scored</h2>
-    <h2>Goals Conceded</h2>
-    <StandingsDatabase/> */}
-    <h3>Current false stanings</h3>
-    {
-      teams.map((team) => {
-      return <li>Team: {team.name}</li>
-      })
-    }
+
     Real standings
     <StandingsDatabase/>
     </>
