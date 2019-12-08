@@ -3,6 +3,7 @@ import './App.css';
 import Axios from 'axios';
 import './StandingsDBStyle.css';
 function StandingsDatabase() {
+  const teams = [];
   const [info, setInfo] = useState([]);
   useEffect(() => {
     Axios.get('http://api.football-data.org/v2/competitions/2021/standings', {
@@ -10,9 +11,9 @@ function StandingsDatabase() {
     })
       .then(data => setInfo(data.data.standings[0].table))
   }, [])
-  console.log(info);
-
-  // post stuff to the backend
+  for (let teams of info) {
+    console.log(teams.team.name);
+  }
       
   return (
     <>
