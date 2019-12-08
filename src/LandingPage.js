@@ -24,14 +24,14 @@ function LandingPage() {
     <>
     <h1>Welcome to the football app - anaylse your team's performance</h1>
     <h3>Select your team here. Please note, the english premier league is currently the only supported league.</h3>
-    <select>
+    <form>
+    <select onChange={handleClick}>
       {teamDatabase.map(team => (
         <option>{team}</option>
       ))}
     </select>
-    <button onCLick={()=>handleClick}>submit</button>
-    Your team is {selectedTeam}
-    
+    {selectedTeam}
+    </form>
     </>
   );
 }
