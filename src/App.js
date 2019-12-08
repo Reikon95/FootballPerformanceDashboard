@@ -22,6 +22,8 @@ function App() {
       return <li>Team: {team.name}</li>
       })
     }
+    Real standings
+    <StandingsDatabase/>
     </>
   )
 }
