@@ -1,6 +1,7 @@
 import React from 'react';
 
-function ResultsPage(props) {
+export default function ResultsPage(props) {
+    return (
     <>
     <h1>Analysis for {props.name}</h1>
     <div className="subheading">
@@ -14,5 +15,5 @@ function ResultsPage(props) {
             With x goals and x assists this season, you should watch out for {props.dangerman}
         </div>
     </div>
-    </>
+    </>)
 }
