@@ -8,7 +8,8 @@ export default function Scorers() {
             headers: {'X-Auth-Token' : 'ffdf6b8895ad49d3af4db2724aea4c3b', 'Content-Type': 'application/json'},
           })
           .then(results => setPlayers(results))
-          console.log(players);
+          
+          
           
     })
     return (
