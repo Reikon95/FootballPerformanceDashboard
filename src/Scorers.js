@@ -15,4 +15,6 @@ export default function Scorers() {
     return (
     <p>Scores mounted</p>
     )
+
+    //response comes back multiple times then throws a 429 error
 }
